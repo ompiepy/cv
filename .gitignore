@@ -1,0 +1,4 @@
+*.log
+cv.*
+_minted-cv/**
+.DS_Store

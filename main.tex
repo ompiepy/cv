@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+\usepackage{./components/commonheader}
+
+\begin{document}
+
+\subimport{./components/}{background.tex}
+
+\resumesection{EDUCATION}
+\subimport{./components/education}{education.tex}
+
+\resumesection{CULTURAL AND EDUCATIONAL EXCHANGE}
+\subimport{./components/experiences}{ugrad.tex}
+
+\resumesection{PROFESSIONAL EXPERIENCES}
+\subimport{./components/experiences/}{karkhana.tex}
+
+\resumesection{VOLUNTEER EXPERIENCES}
+\subimport{./components/experiences/}{ecast.tex}
+\subimport{./components/experiences/}{mlsa.tex}
+\subimport{./components/experiences/}{volunteer.tex}
+\subimport{./components/experiences/}{school.tex}
+
+\resumesection{PROJECTS}
+\subimport{./components/projects/}{first_sem.tex}
+
+\resumesection{SKILLS}
+\subimport{./components/skills}{skills.tex}
+
+\resumesection{\MakeUppercase{Licenses and Certifications}}
+\subimport{./components/certificates}{certifications.tex}
+
+\resumesection{LEADERSHIP AND AWARDS}
+\subimport{./components/awards/}{awards.tex}
+
+\resumesection{SUSTAINABILITY}
+\subimport{./components/sustainability}{sustainability.tex}
+
+\end{document}
