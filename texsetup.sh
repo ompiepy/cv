@@ -119,7 +119,6 @@ TL_PKGS=(
     fontawesome
     bbding
     import
-    emoji
     minted
     parskip
     upquote
