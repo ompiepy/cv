@@ -25,7 +25,7 @@ draft:
 	@lualatex -shell-escape -jobname cv --interaction=nonstopmode --halt-on-error -draftmode main.tex
 	@echo "********** Completed  draft **********"
 
-# Run two passes of the pdflatex compiler with minimal output
+# Run two passes of the lualatex compiler with minimal output
 .PHONY: pass2
 pass2:
 	@echo "********** Starting  pass2 **********"
