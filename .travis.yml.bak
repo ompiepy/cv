@@ -5,18 +5,16 @@ python:
 
 # Other artifact details are accessible via Travis website
 # as environment variables
+addons:
+  artifacts:
+    target_paths:
+      - "/pub"
 
 # Install basic Tex Live, additional TeX packages, and Python packages.
 install:
   - "sudo ./texsetup.sh"
   - "PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
   - "pip install -r requirements.txt"
-  - "AZ_REPO=$(lsb_release -cs)"
-  - "echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list"
-  - "curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -"
-  - "sudo apt-get update"
-  - "sudo apt-get install apt-transport-https azure-cli"
-  - "az login -u $AZ_LOGIN_NAME -p $AZ_PASSWORD --service-principal --tenant $AZ_TENANT > /dev/null 2>&1"
 
 # Execute linting tests before running the main playbook.
 # Note: "chktex" apparently always returns rc=0
@@ -29,7 +27,4 @@ before_script:
 # trying to "open" a PDF within the CI system
 script:
   - "make pass2"
-
-after_success:
-  - "az storage blob upload-batch -d \$web -s ./cv.pdf"
 ...
