@@ -31,5 +31,5 @@ script:
   - "make pass2"
 
 after_success:
-  - "az storage blob upload-batch -d \$web -s ./cv.pdf"
+  - "az storage blob upload-batch -d '$web' -s ./cv.pdf"
 ...
