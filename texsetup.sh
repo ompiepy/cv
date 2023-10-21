@@ -116,7 +116,8 @@ TL_PKGS=(
     ltxcmds
     enumitem
     fontspec
-    fontawesome
+    fontawesome5
+    luatexbase
     bbding
     import
     minted
