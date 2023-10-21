@@ -1,7 +1,7 @@
 ---
 language: python
 python:
-  - "3.6"
+  - "3.7"
 
 # Other artifact details are accessible via Travis website
 # as environment variables
