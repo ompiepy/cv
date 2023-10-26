@@ -4,3 +4,6 @@ Pygments==2.3.1
 # Required for Azure Storaeg Blob API
 azure-storage-blob
 azure-identity
+
+# request
+requests
