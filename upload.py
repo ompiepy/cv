@@ -21,11 +21,6 @@ if __name__ == "__main__":
     # Replace these values with your own
     pdf_file_path = "./cv.pdf"  # Path to the PDF file you want to upload
     connection_string = os.environ['CONNECTION_STRING']  # Your Azure Blob Storage connection string
-    if connection_string is not None:
-        # Use the connection string
-    else:
-        print("Connection string environment variable is not set.")
-
     container_name = "$web"  # The name of the existing container in Azure Blob Storage
     blob_name = "cv.pdf"  # The name you want to give to the PDF file in Azure Blob Storage
 
