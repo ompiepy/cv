@@ -20,8 +20,9 @@ def upload_pdf_to_azure_blob(pdf_file_path, connection_string, container_name, b
 if __name__ == "__main__":
     # Replace these values with your own
     pdf_file_path = "./cv.pdf"  # Path to the PDF file you want to upload
-    connection_string = 'DefaultEndpointsProtocol=https;AccountName=ompiepy;AccountKey=qaQ5vy/+yTcXRZfM0wPH6vrVvhuyHk59DKWDJzXeQNDe/0N7TydCoMtE9jLrtFRWIUDXFhGYm9Jr+ASt9Xsucg==;EndpointSuffix=core.windows.net'  # Your Azure Blob Storage connection string
-    # connection_string = os.environ['CONNECTION_STRING']  # Your Azure Blob Storage connection string
+    connection_string = os.environ['CONNECTION_STRING']  # Your Azure Blob Storage connection string
+    print(connection_string)
+    print(os.environ['CONNECTION_STRING'])
     container_name = "$web"  # The name of the existing container in Azure Blob Storage
     blob_name = "cv.pdf"  # The name you want to give to the PDF file in Azure Blob Storage
 
