@@ -9,9 +9,12 @@ def upload_pdf_to_azure_blob(pdf_file_path, connection_string, container_name, b
         # Get a BlobClient for the PDF file within the existing container
         blob_client = blob_service_client.get_blob_client(container_name, blob_name)
 
+        # Set the Content-Type for the PDF file
+        content_settings = ContentSettings(content_type="application/pdf")
+
         # Upload the PDF file
         with open(pdf_file_path, "rb") as data:
-            blob_client.upload_blob(data, overwrite=True)
+            blob_client.upload_blob(data, overwrite=True, content_settings=content_settings)
 
         print(f"Uploaded {pdf_file_path} to Azure Blob Storage as {blob_name}")
     except Exception as e:
