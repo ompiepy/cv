@@ -4,30 +4,24 @@ python:
   - "3.7"
 os: linux
 dist: jammy
-env:
-  global:
-      secure: "KW+ahw+I3hJcwPvZmd0RueMnteDwe6xreIqjiqh7nnQV/grLotHzdqLVDfw4A6dV04w3Vkrov+0JHkOHa23bWhNMFOrWG1gwxXPfMib9OY28i6g1gajyVAMJpsQfN6Bx1QEIlrhrjSe2UVEsq8mgB0T5mv37RpDz6ic/ujpafcAM7uRw5EGFXVjhzV7GQzsvErDZyxu5T3pudbd5ufuBtxDPnsleCUVz/LbDZgEhtblwaNLQlHqsG1ilDQ4bo80xYMiEFsBVB/4JrXFsDHcgPyrkQ/YkQ0AGYn1VtiyvTND0XlvtySHDU8P6HRwHDvsCf20A5HlPrSbEA1cVghMO9z/djHTJzMOPW3DJOou/93w34YIaTmk78fXhYtOiPuvewuDfxxt7hafqOqDmFNJ4fcigysXgAEe17tS2SeJxEXwsn58iTYTgvxYAdTjFVbD1SVLEOZTaF/mX9ULHL48W9Wb+cOEKWw0jI9fLTXK66Vw/gni8/f/mKOyVdALKgLXbOdSGCOoouZqt+gbQQATzoUIJlUtg6vpzFxvqb0qcmup2SpF6a2MbFagk+o7wdqTcOKOtkd41RhXRWYsyqw17zhojz6rhwp/FZi9gxdGyNTvrpNlwN1NUfkzElMwOZTfq1B5PcUm7ivP2AGB1PHIwmBu5Vn4RETtXnXqdv8JtMso="
 
 # Other artifact details are accessible via Travis website
 # as environment variables
 
 # Install basic Tex Live, additional TeX packages, and Python packages.
 install:
-  - "sudo ./texsetup.sh"
-  - "PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
   - "pip install -r requirements.txt"
 
 # Execute linting tests before running the main playbook.
 # Note: "chktex" apparently always returns rc=0
 # draft-mode will not render images, and provides detailed fail log
 before_script:
-  - "make lint"
-  - "make draft"
+  - echo "2" 
 
 # Make the PDF itself, including images. Usee pass2 to avoid
 # trying to "open" a PDF within the CI system
 script:
-  - "make pass2"
+  - echo "3" 
 
 after_success:
   - "python upload.py"

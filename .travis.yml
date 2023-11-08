@@ -10,18 +10,21 @@ dist: jammy
 
 # Install basic Tex Live, additional TeX packages, and Python packages.
 install:
+  - "sudo ./texsetup.sh"
+  - "PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-linux"
   - "pip install -r requirements.txt"
 
 # Execute linting tests before running the main playbook.
 # Note: "chktex" apparently always returns rc=0
 # draft-mode will not render images, and provides detailed fail log
 before_script:
-  - echo "2" 
+  - "make lint"
+  - "make draft"
 
 # Make the PDF itself, including images. Usee pass2 to avoid
 # trying to "open" a PDF within the CI system
 script:
-  - echo "3" 
+  - "make pass2"
 
 after_success:
   - "python upload.py"
