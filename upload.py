@@ -18,10 +18,8 @@ def upload_pdf_to_azure_blob(pdf_file_path, connection_string, container_name, b
         print(f"An error occurred: {str(e)}")
 
 if __name__ == "__main__":
-    # Replace these values with your own
     pdf_file_path = "./cv.pdf"  # Path to the PDF file you want to upload
     connection_string = os.environ.get('CONNECTION_STRING')  # Your Azure Blob Storage connection string
-    print(connection_string)
     container_name = "$web"  # The name of the existing container in Azure Blob Storage
     blob_name = "cv.pdf"  # The name you want to give to the PDF file in Azure Blob Storage
 
