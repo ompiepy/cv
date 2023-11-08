@@ -1,5 +1,5 @@
 import os
-from azure.storage.blob import BlobServiceClient, BlobClient
+from azure.storage.blob import BlobServiceClient, BlobClient, ContentSettings
 
 def upload_pdf_to_azure_blob(pdf_file_path, connection_string, container_name, blob_name):
     try:
