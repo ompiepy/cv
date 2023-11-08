@@ -10,7 +10,7 @@ dist: jammy
 
 # Install basic Tex Live, additional TeX packages, and Python packages.
 install:
-  - echo "1" 
+  - "pip install -r requirements.txt"
 
 # Execute linting tests before running the main playbook.
 # Note: "chktex" apparently always returns rc=0
