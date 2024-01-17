@@ -1,6 +1,6 @@
 # File:    Makefile
 # Version: GNU Make 3.81
-# Author:  Nicholas Russo (njrusmc@gmail.com)
+# Author:  Om Sharma (opsharma@noctr.edu)
 # Purpose: Phony targets used for linting TeX and typesetting a PDF
 #          for some quick testing.
 
